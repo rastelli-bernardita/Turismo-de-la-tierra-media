@@ -9,6 +9,13 @@ public class Usuario {
 	private int monedasnecesarias;
 	
 	
+	public Usuario(int tiempo, double monedas, String preferencia) {
+		super();
+		this.tiempo = tiempo;
+		this.monedas = monedas;
+		this.preferencia = preferencia;
+	}
+
 	public int getTiempoDisponible() {
 		return tiempo;
 	}
@@ -29,7 +36,7 @@ public class Usuario {
 		return preferencia;
 	}
 
-	public String[] getSugerenciaDiaria() {
+	public comprable[] getSugerenciaDiaria() {
 		return sugerenciadiaria;
 	}
 	

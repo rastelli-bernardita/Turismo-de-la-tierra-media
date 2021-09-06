@@ -6,7 +6,15 @@ public abstract class Promocion implements comprable{
     private String[] atracciones;
     private double costopromocion;
 	
-    public double getCostopromocion() {
+    
+    public Promocion(String tipopromocion, String[] atracciones, double costopromocion) {
+		super();
+		this.tipopromocion = tipopromocion;
+		this.atracciones = atracciones;
+		this.costopromocion = costopromocion;
+	}
+
+	public double getCostopromocion() {
 		return costopromocion;
 	}
 	
@@ -15,5 +23,9 @@ public abstract class Promocion implements comprable{
 	}
     
     public void calcularCostopromocion() {}
+
+	public String getTipopromocion() {
+		return tipopromocion;
+	}
 	
 }
