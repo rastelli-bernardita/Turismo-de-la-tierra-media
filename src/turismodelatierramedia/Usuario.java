@@ -7,13 +7,14 @@ public class Usuario {
 	private comprable[]sugerenciadiaria;
 	private int horasnecesarias;
 	private int monedasnecesarias;
+	private String nombre;
 	
-	
-	public Usuario(int tiempo, double monedas, String preferencia) {
+	public Usuario(String nombre,String preferencia, double monedas, int tiempo) {
 		super();
 		this.tiempo = tiempo;
 		this.monedas = monedas;
 		this.preferencia = preferencia;
+		this.nombre = nombre;
 	}
 
 	public int getTiempoDisponible() {

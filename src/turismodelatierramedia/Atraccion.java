@@ -5,10 +5,12 @@ public class Atraccion implements comprable{
 	private String tipo;
 	private int duracion;
 	private int cupo;
+	private String nombre;
     private int personas;
     
-	public Atraccion(double costo, String tipo, int duracion, int cupo) {
+	public Atraccion(String nombre, double costo, int duracion, int cupo, String tipo) {
 		super();
+		this.nombre = nombre;
 		this.costo = costo;
 		this.tipo = tipo;
 		this.duracion = duracion;

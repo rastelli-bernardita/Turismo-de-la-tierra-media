@@ -23,9 +23,10 @@ public class Lectordearchivos {
 
 				usuarios.add(
 					new Usuario(
-						Integer.parseInt(line[0]), 
-						Double.parseDouble(line[1]), 
-					    line[2]
+						line[0], 
+						line[1], 
+					    Double.parseDouble(line[2]),
+					    Integer.parseInt(line[3])
 					)
 				);
 				
@@ -55,10 +56,11 @@ public class Lectordearchivos {
 
 				atracciones.add(
 					new Atraccion(
-						Double.parseDouble(line[0]), 
-						line[1], 
+						line[0], 
+						Double.parseDouble(line[1]), 
 					    Integer.parseInt(line[2]),
-					    Integer.parseInt(line[3])
+					    Integer.parseInt(line[3]),
+					    line[4]
 					)
 				);
 				
