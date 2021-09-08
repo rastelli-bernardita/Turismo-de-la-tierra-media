@@ -1,13 +1,13 @@
 package turismodelatierramedia;
 
-public abstract class Promocion implements comprable{
+public class Promocion implements comprable{
 
 	private String tipopromocion;
-    private String[] atracciones;
+    private String atracciones;
     private double costopromocion;
 	
     
-    public Promocion(String tipopromocion, String[] atracciones, double costopromocion) {
+    public Promocion(String tipopromocion, String atracciones, double costopromocion) {
 		super();
 		this.tipopromocion = tipopromocion;
 		this.atracciones = atracciones;
@@ -18,7 +18,7 @@ public abstract class Promocion implements comprable{
 		return costopromocion;
 	}
 	
-    public String[] getAtracciones() {
+    public String getAtracciones() {
 		return atracciones;
 	}
     
