@@ -14,7 +14,7 @@ public class Promocion implements comprable{
 		this.costopromocion = costopromocion;
 	}
 
-	public double getCostopromocion() {
+	public double getCosto() {
 		return costopromocion;
 	}
 	
@@ -24,8 +24,26 @@ public class Promocion implements comprable{
     
     public void calcularCostopromocion() {}
 
-	public String getTipopromocion() {
+	public String getTipo() {
 		return tipopromocion;
+	}
+
+	@Override
+	public int getTiempo() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean hayCupo() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean esOContiene() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 }

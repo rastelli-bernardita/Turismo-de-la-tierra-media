@@ -47,6 +47,18 @@ public class Usuario {
 		System.out.println(this.sugerenciadiaria);
 		}
 	
+	public boolean puedeComprar(comprable compra, Usuario user) {
+		return user.getMonedasDisponibles()>= compra.getCosto() && user.getTiempoDisponible()>= compra.getTiempo();
+	}
+	
+	public double getMonedasGastadas() {
+		return this.monedasnecesarias;
+	}
+	
+	public int getTiempoGastado() {
+	    return this.horasnecesarias;
+	}	
+	
 	public void guardarComprable() {}
 	
 }

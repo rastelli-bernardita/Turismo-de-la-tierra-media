@@ -25,17 +25,25 @@ public class Atraccion implements comprable{
 		return tipo;
 	}
 	
-	public int getDuracion() {
+	public int getTiempo() {
 		return duracion;
 	}
 	
-	public boolean getHayCupo() {
+	public boolean hayCupo() {
 		return cupo <= (personas +1);
 	}
 	
 	public void agregarPersona() {
 			personas++;
 	}
+
+	@Override
+	public boolean esOContiene() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
 	
 	
 }
