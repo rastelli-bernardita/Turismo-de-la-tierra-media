@@ -20,26 +20,7 @@ public class Promocion implements comprable{
 		return this.costoPromocion;
 	}
 	
-	protected double calcularCostoPromocion() {
-		switch (this.clasePromocion) {
-		case PromocionAbsoluta:
-			this.costoPromocion = this.valorPromocion;
-			return this.costoPromocion;
-		case PromocionAXB:
-			this.costoPromocion = 0;
-			for (int i = 1; i < this.atracciones.length() - 1; i++) {
-				this.costoPromocion += this.atracciones[i].getCosto();
-			}
-			return this.costoPromocion;
-		case PromocionPorcentual:
-			this.costoPromocion = 0;
-			for (int i = 1; i < this.atracciones.length(); i++) {
-				this.costoPromocion += this.atracciones[i].getCosto();
-				}
-			this.costoPromocion -= this.costoPromocion * (this.valorPromocion / 100);
-			return this.costoPromocion;
-		}
-	}
+	abstract calcularCostoPromocion() {}
 	
     public String getAtracciones() {
 		return this.atracciones;
