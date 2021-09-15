@@ -91,8 +91,9 @@ public class Lectordearchivos {
 				promociones.add(
 					new Promocion(
 						line[0], 
-						line[1], 
-					    Double.parseDouble(line[2])
+						line[1],
+						line[2],
+					    Double.parseDouble(line[3])
 					)
 				);
 				

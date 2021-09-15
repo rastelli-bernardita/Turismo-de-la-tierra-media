@@ -2,42 +2,71 @@ package turismodelatierramedia;
 
 public class Promocion implements comprable{
 
-	private String tipopromocion;
-    private String atracciones;
-    private double costopromocion;
-	
+	private String tipoPromocion;
+    private String[] atracciones;
+    private double costoPromocion;
+    private double valorPromocion;
+	private clasePromocion clasePromocion;
     
-    public Promocion(String tipopromocion, String atracciones, double costopromocion) {
+    public Promocion(String tipoPromocion, String[] atracciones, clasePromocion clasePromocion, double valor) {
 		super();
-		this.tipopromocion = tipopromocion;
-		this.atracciones = atracciones;
-		this.costopromocion = costopromocion;
+		this.tipoPromocion = tipoPromocion;
+		this.atracciones[] = atracciones;
+		this.costoPromocion = this.calcularCostoPromocion();
+		this.valorPromocion = valor;
 	}
 
 	public double getCosto() {
-		return costopromocion;
+		return this.costoPromocion;
+	}
+	
+	protected double calcularCostoPromocion() {
+		switch (this.clasePromocion) {
+		case PromocionAbsoluta:
+			this.costoPromocion = this.valorPromocion;
+			return this.costoPromocion;
+		case PromocionAXB:
+			this.costoPromocion = 0;
+			for (int i = 1; i < this.atracciones.length() - 1; i++) {
+				this.costoPromocion += this.atracciones[i].getCosto();
+			}
+			return this.costoPromocion;
+		case PromocionPorcentual:
+			this.costoPromocion = 0;
+			for (int i = 1; i < this.atracciones.length(); i++) {
+				this.costoPromocion += this.atracciones[i].getCosto();
+				}
+			this.costoPromocion -= this.costoPromocion * (this.valorPromocion / 100);
+			return this.costoPromocion;
+		}
 	}
 	
     public String getAtracciones() {
-		return atracciones;
+		return this.atracciones;
 	}
     
-    public void calcularCostopromocion() {}
-
 	public String getTipo() {
-		return tipopromocion;
+		return this.tipoPromocion;
 	}
 
 	@Override
 	public int getTiempo() {
-		// TODO Auto-generated method stub
-		return 0;
+		int tiempo = 0;
+		for (int i = 1; i < this.atracciones.length(); i++) {
+			tiempo += this.atracciones[i].getTiempo();
+		}
+		return tiempo;
 	}
 
 	@Override
 	public boolean hayCupo() {
-		// TODO Auto-generated method stub
-		return false;
+		boolean cupo = true;
+		for (int i = 1; i < this.atracciones.length(); i++) {
+			if (!this.atracciones[i].hayCupo()) {
+				cupo = false;
+			}
+		}
+		return cupo;
 	}
 
 	@Override

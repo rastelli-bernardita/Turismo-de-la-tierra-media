@@ -18,23 +18,28 @@ public class Atraccion implements comprable{
 	}
 	
 	public double getCosto() {
-		return costo;
+		return this.costo;
 	}
 	
 	public String getTipo() {
-		return tipo;
+		return this.tipo;
 	}
 	
 	public int getTiempo() {
-		return duracion;
+		return this.duracion;
 	}
 	
 	public boolean hayCupo() {
-		return cupo <= (personas +1);
+		return this.cupo <= (this.personas +1);
 	}
 	
 	public void agregarPersona() {
-			personas++;
+		if(this.hayCupo()) {
+			this.personas++;
+			}
+		else {
+			
+		}
 	}
 
 	@Override
